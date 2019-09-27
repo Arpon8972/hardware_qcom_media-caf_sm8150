@@ -524,7 +524,7 @@ static OMX_ERRORTYPE subscribe_to_events(int fd)
     return eRet;
 }
 
-bool venc_dev::venc_query_cap(struct v4l2_queryctrl &cap) {
+bool inline venc_dev::venc_query_cap(struct v4l2_queryctrl &cap) {
 
     if (ioctl(m_nDriver_fd, VIDIOC_QUERYCTRL, &cap)) {
         DEBUG_PRINT_ERROR("Query caps for id = %u failed", cap.id);

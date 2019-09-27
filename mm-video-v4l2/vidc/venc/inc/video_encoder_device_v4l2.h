@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
-Copyright (c) 2012-2019, The Linux Foundation. All rights reserved.
+Copyright (c) 2012-2018, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -422,7 +422,6 @@ class venc_dev
         bool handle_input_extradata(struct v4l2_buffer);
         bool venc_handle_client_input_extradata(void *);
         int venc_set_format(int);
-        bool venc_query_cap(struct v4l2_queryctrl &cap);
         bool deinterlace_enabled;
         bool hw_overload;
         bool is_gralloc_source_ubwc;
@@ -472,6 +471,7 @@ class venc_dev
         bool client_req_turbo_mode;
         char m_platform_name[PROPERTY_VALUE_MAX] = {0};
 
+        bool venc_query_cap(struct v4l2_queryctrl &cap);
         bool venc_validate_range(OMX_S32 id, OMX_S32 val);
         bool venc_set_profile(OMX_U32 eProfile);
         bool venc_set_level(OMX_U32 eLevel);
